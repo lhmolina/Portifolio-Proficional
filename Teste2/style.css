@@ -1,0 +1,610 @@
+
+/* ==========================================
+   1. CONFIGURAÇÕES GLOBAIS
+========================================== */
+
+/* Remove margens padrões e facilita controlar
+   o tamanho dos elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configura o comportamento de rolagem */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Configurações gerais da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #080808;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   2. VARIÁVEIS DE CORES
+========================================== */
+
+/* As variáveis facilitam mudar a identidade
+   visual do site inteiro sem procurar cor por cor */
+
+
+:root {
+    /* FUNDOS */
+    --background: #050505;
+    --surface: #101012;
+    --surface-glass: rgba(16, 16, 18, 0.62);
+
+    /* TEXTOS */
+    --text: #ffffff;
+    --text-secondary: #a6a6ad;
+    --silver: #c7c7d0;
+    --silver-light: #eeeeF2;
+
+    /* ROXO */
+    --purple: #9855ff;
+    --purple-light: #bd91ff;
+    --purple-glow: rgba(152, 85, 255, 0.25);
+
+    /* BORDAS E EFEITOS */
+    --border: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.16);
+    --shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+
+    /* TRANSIÇÕES */
+    --transition: 0.4s ease;
+}
+
+
+/* ==========================================
+   3. CONFIGURAÇÕES DAS SEÇÕES
+========================================== */
+
+/* Cada seção ocupa pelo menos a altura da tela */
+.section {
+    min-height: 100vh;
+    padding: 120px 8%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    #inicio {
+    padding-top: 140px;
+    padding-bottom: 200px;
+}
+
+
+/* Títulos principais */
+.section-heading h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+/* Pequenos textos acima dos títulos */
+.section-label {
+    color: var(--purple);
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   4. BACKGROUND DE VÍDEO
+========================================== */
+
+.background-container {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    filter: contrast(1.08) saturate(0.85);
+    position: absolute;
+    inset: 0;
+}
+
+.background-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(152, 85, 255, 0.08),
+            transparent 45%
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.30),
+            rgba(0, 0, 0, 0.92)
+        );
+}
+
+
+/* ==========================================
+   5. CABEÇALHO
+========================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 25px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 100;
+
+    background: rgba(8, 8, 8, 0.65);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+/* Logo */
+.logo {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Menu */
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Links do menu */
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    transition: color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--purple-light);
+}
+
+/* Botões de tema e idioma */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-controls button {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* ==========================================
+   6. APRESENTAÇÃO / HERO
+========================================== */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 50px;
+    transform: translateY(-50px);
+}
+
+
+
+/* Título da apresentação */
+.hero-content h1 {
+    font-size: clamp(3rem, 6vw, 6.5rem);
+    line-height: 1.05;
+    max-width: 750px;
+    margin: 25px 0;
+}
+
+/* Texto abaixo do título */
+.hero-description {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 500px;
+}
+
+/* Grupo dos botões */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+/* Estilo base dos botões */
+.button {
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 50px;
+    border: 1px solid var(--purple);
+    transition: 0.3s ease;
+}
+
+/* Botão principal */
+.button-primary {
+    background: var(--purple);
+    color: #ffffff;
+}
+
+/* Botão secundário */
+.button-secondary {
+    color: white;
+    background: transparent;
+}
+
+/* Efeito hover */
+.button:hover {
+    background: var(--purple-light);
+    color: #000000;
+    box-shadow: 0 0 20px rgba(155, 92, 255, 0.25);
+}
+
+/* Imagem da apresentação */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagem pessoal */
+.hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 650px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 35px rgba(152, 85, 255, 0.12);
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ==========================================
+   7. SOBRE MIM
+========================================== */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Área reservada para a animação */
+.dna-container {
+    min-height: 400px;
+}
+
+/* Texto da seção */
+.about-text p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.9;
+}
+
+/* ==========================================
+   8. CARREIRA
+========================================== */
+
+.career-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 850px;
+}
+
+/* Cada experiência */
+.career-item {
+    border-left: 1px solid var(--purple);
+    padding: 10px 0 10px 25px;
+}
+
+/* Data da experiência */
+.career-date {
+    color: var(--purple-light);
+    font-size: 0.85rem;
+}
+
+/* Cargo */
+.career-item h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Empresa */
+.career-company {
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+/* Descrição */
+.career-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ==========================================
+   9. PROJETOS
+========================================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Card do projeto */
+.project-card {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+/* Efeito de destaque */
+.project-card:hover {
+    border-color: var(--purple);
+    transform: translateY(-5px);
+}
+
+/* Imagem do projeto */
+.project-image {
+    width: 100%;
+    height: 230px;
+    background: #171717;
+}
+
+/* Conteúdo do card */
+.project-info {
+    padding: 25px;
+}
+
+/* Título do projeto */
+.project-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+/* Texto do projeto */
+.project-info p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Status */
+.project-status {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--purple-light);
+    font-size: 0.8rem;
+}
+
+/* ==========================================
+   10. CONTATOS
+========================================== */
+
+.contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+/* Botões de contato */
+.contact-button {
+    text-decoration: none;
+    color: white;
+    border: 1px solid var(--border);
+    padding: 15px 25px;
+    border-radius: 50px;
+
+    transition: 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.contact-button:hover {
+    background: var(--purple);
+    border-color: var(--purple);
+    box-shadow: 0 0 20px rgba(155, 92, 255, 0.25);
+}
+
+/* ==========================================
+   11. RODAPÉ
+========================================== */
+
+.footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* ==========================================
+   12. RESPONSIVIDADE — TABLETS E CELULARES
+========================================== */
+
+@media (max-width: 1000px) {
+
+    /* Ajusta a apresentação para telas menores */
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduz a altura da foto */
+    .hero-image img {
+        height: 500px;
+    }
+
+    /* Reduz o número de colunas dos projetos */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ==========================================
+   13. RESPONSIVIDADE — CELULARES
+========================================== */
+
+@media (max-width: 700px) {
+
+    /* Reduz o espaçamento das seções */
+    .section {
+        padding: 110px 6% 70px;
+    }
+
+    /* Menu de navegação */
+    .navigation {
+        display: none;
+    }
+
+    /* Apresentação */
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    /* Sobre mim */
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    /* Projetos em uma coluna */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Foto */
+    .hero-image img {
+        height: 400px;
+    }
+
+    /* Controles do cabeçalho */
+    .header {
+        padding: 20px 6%;
+    }
+
+}
+
+/* ==========================================
+   14. TEMA CLARO
+========================================== */
+
+/* Quando o JavaScript definir o tema como light,
+   essas cores substituirão as cores padrão */
+body[data-theme="light"] {
+    --background: #f2f2f4;
+    --surface: #ffffff;
+    --text: #151515;
+    --text-secondary: #606060;
+    --purple: #7b35d6;
+    --purple-light: #8746e8;
+    --border: rgba(0, 0, 0, 0.12);
+}
+
+/* Fundo principal no tema claro */
+body[data-theme="light"] {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* Cabeçalho no tema claro */
+body[data-theme="light"] .header {
+    background: rgba(245, 245, 245, 0.8);
+}
+
+/* Logo */
+body[data-theme="light"] .logo {
+    color: #151515;
+}
+
+/* Menu */
+body[data-theme="light"] .nav-link {
+    color: #555555;
+}
+
+/* Menu selecionado */
+body[data-theme="light"] .nav-link.active,
+body[data-theme="light"] .nav-link:hover {
+    color: var(--purple);
+}
+
+/* Botões do cabeçalho */
+body[data-theme="light"] .header-controls button {
+    color: #151515;
+}
+
+/* Botão secundário */
+body[data-theme="light"] .button-secondary {
+    color: #151515;
+}
+
+/* Cards dos projetos */
+body[data-theme="light"] .project-card {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* Imagens dos projetos */
+body[data-theme="light"] .project-image {
+    background: #e7e7e7;
+}
+
+/* Botões de contato */
+body[data-theme="light"] .contact-button {
+    color: #151515;
+}
+
+/* Rodapé */
+body[data-theme="light"] .footer {
+    color: #555555;
+}
+
+/* Ajusta a iluminação do vídeo no tema claro */
+body[data-theme="light"] .background-video {
+    opacity: 0.12;
+}
+
+/* Ajusta a camada de escurecimento */
+body[data-theme="light"] .background-overlay {
+    background: rgba(255, 255, 255, 0.75);
+}

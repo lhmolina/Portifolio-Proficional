@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Molina Portfolio — Lucas Henrique Molina da Silva</title>
+<meta name="description" content="Portfólio profissional de Lucas Molina: tecnologia, vendas e e-commerce.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Manrope:wght@300;400;600&family=Oswald:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- Vídeo global: coloque seu arquivo em assets/fundo.mp4 -->
+<video id="bg" autoplay muted loop playsinline aria-hidden="true"><source src="assets/fundo.mp4" type="video/mp4"></video>
+<div class="bg-shade"></div>
+
+<div id="intro" aria-hidden="true"><div class="word"><span class="m">M</span><span class="rest">olina</span></div></div>
+
+<header id="top">
+  <a href="#apresentacao" class="logo" aria-label="Molina">
+    <!-- TROCAR por <img src="assets/logo.svg"> com a logo original -->
+    Molina
+  </a>
+  <nav id="nav" aria-label="Principal">
+    <a href="#apresentacao" data-i18n="n1">Apresentação</a>
+    <a href="#sobre" data-i18n="n2">Sobre mim</a>
+    <a href="#carreira" data-i18n="n3">Minha carreira</a>
+    <a href="#projetos" data-i18n="n4">Projetos</a>
+    <a href="#contatos" data-i18n="n5">Contatos</a>
+  </nav>
+  <div class="ctrl">
+    <button id="theme" aria-label="Alternar tema">◐</button>
+    <select id="lang" aria-label="Idioma"><option value="pt">PT</option><option value="en">EN</option></select>
+    <button id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+<section id="apresentacao" class="hero">
+  <div class="hero-text reveal">
+    <small data-i18n="h0">PORTFÓLIO PROFISSIONAL</small>
+    <h1 data-i18n="h1">Transformando ideias em evolução.</h1>
+    <p data-i18n="h2">Tecnologia, vendas e e-commerce. Construindo minha trajetória profissional através do aprendizado e da prática.</p>
+    <div class="btns"><a class="btn" href="#projetos" data-i18n="b1">Conhecer projetos</a><a class="btn" href="#contatos" data-i18n="b2">Falar comigo</a></div>
+  </div>
+  <div class="hero-photo reveal">
+    <img src="assets/foto.jpg" alt="Lucas Molina" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'assets/foto.jpg'}))">
+  </div>
+</section>
+
+<section id="sobre" class="about">
+  <div class="sticky">
+    <canvas id="dna" aria-hidden="true"></canvas>
+    <div class="about-head"><small>SOBRE MIM</small><h2 data-i18n="a0">Uma trajetória construída na prática.</h2></div>
+    <p class="bubble" data-b="0.2" data-i18n="a1">Passei por vendas, cozinha e e-commerce. Cada área me ensinou comunicação, organização e trabalho em equipe.</p>
+    <p class="bubble" data-b="0.45" data-i18n="a2">Hoje atuo no e-commerce e estudo desenvolvimento web, aprendendo HTML, CSS e JavaScript na prática.</p>
+    <p class="bubble" data-b="0.65" data-i18n="a3">Sou curioso e aprendo construindo: ainda estou evoluindo, e é isso que me move.</p>
+  </div>
+</section>
+
+<section id="carreira" class="sec">
+  <h2 data-i18n="c0">Minha carreira</h2>
+  <ol class="timeline">
+    <li class="reveal"><b>Dourado Importações e Exportação</b><em>Auxiliar de e-commerce · Dez 2025 — Atual · Presencial</em><p>Atividades operacionais de e-commerce: separação, organização e preparação de produtos, com conhecimento de embalagem e expedição.</p></li>
+    <li class="reveal"><b>Almaviva</b><em>Consultor de vendas · 2025</em><p>Atendimento, comunicação com clientes e atividades do processo de vendas.</p></li>
+    <li class="reveal"><b>Oba Pizza Express</b><em>Auxiliar de cozinha · Set 2024 — Fev 2025</em><p>Atividades operacionais, organização e trabalho em equipe.</p></li>
+    <li class="reveal edu"><b>Instituto PROA</b><em>Desenvolvimento de Software · Ago — Dez 2026 · Em andamento</em><p>HTML, CSS e JavaScript.</p></li>
+  </ol>
+
+  <h2 class="sub" data-i18n="t0">Ferramentas e tecnologias</h2>
+  <div class="grid2" id="skills">
+    <div class="glass"><h3>Ferramentas e aplicativos</h3>
+      <div class="bar" data-v="95"><span>ChatGPT</span><i></i><b>0%</b><p>Assistência, ideias, pesquisa e estudos.</p></div>
+      <div class="bar" data-v="70"><span>Claude AI</span><i></i><b>0%</b><p>Apoio em atividades e desenvolvimento.</p></div>
+      <div class="bar" data-v="40"><span>Canva</span><i></i><b>0%</b><p>Criação visual e materiais gráficos.</p></div>
+      <div class="bar" data-v="50"><span>GitHub</span><i></i><b>0%</b><p>Acesso a projetos e repositórios.</p></div>
+      <div class="bar" data-v="60"><span>Figma</span><i></i><b>0%</b><p>Interfaces, protótipos e layouts.</p></div>
+      <div class="bar" data-v="90"><span>Visual Studio Code</span><i></i><b>0%</b><p>Principal ambiente para escrever código.</p></div>
+    </div>
+    <div class="glass"><h3>Tecnologias</h3>
+      <div class="bar" data-v="65"><span>HTML</span><i></i><b>0%</b><p>Estruturação de páginas web.</p></div>
+      <div class="bar" data-v="70"><span>CSS</span><i></i><b>0%</b><p>Estilo, layout, identidade e animações.</p></div>
+      <div class="bar" data-v="55"><span>JavaScript</span><i></i><b>0%</b><p>Em desenvolvimento: lógica e interatividade.</p></div>
+      <small class="note">Percentuais são estimativas visuais subjetivas de frequência e familiaridade, não medições nem certificações.</small>
+    </div>
+  </div>
+</section>
+
+<section id="projetos" class="sec">
+  <h2 data-i18n="p0">Projetos</h2>
+  <div class="grid3">
+    <article class="glass reveal"><h3>Bolso Jovem</h3><span class="tag">Em desenvolvimento</span><p>Organização financeira para jovens. Planejado: receitas, despesas, edição, exclusão, filtros por categoria, saldo mensal, resumo de gastos, educação financeira e simulador de investimentos.</p><small>HTML · CSS · JavaScript</small></article>
+    <article class="glass reveal"><h3>Primeiro portfólio Front-end</h3><span class="tag">Estudo</span><p>Projeto inicial dos estudos de desenvolvimento web, como experiência prática de aprendizado.</p><small>HTML · CSS</small></article>
+    <article class="glass reveal"><h3>Protótipos no Figma</h3><span class="tag">Protótipo visual</span><p>Conceitos de interface desenvolvidos no Figma (não são aplicações funcionais). Nomes e imagens serão adicionados.</p><small>Figma</small></article>
+  </div>
+</section>
+
+<section id="contatos" class="sec contact">
+  <div>
+    <h2 data-i18n="k0">Vamos conversar?</h2>
+    <p data-i18n="k1">Tem alguma ideia, oportunidade ou projeto em mente? Entre em contato comigo pelos canais abaixo.</p>
+    <div class="links">
+      <a class="btn" href="https://linkedin.com/in/lucas-hmolina" target="_blank" rel="noopener">LinkedIn</a>
+      <!-- PREENCHER: Instagram, WhatsApp e e-mail -->
+      <a class="btn" href="#" data-todo>Instagram</a>
+      <a class="btn" href="#" data-todo>WhatsApp</a>
+      <a class="btn" href="#" data-todo>E-mail</a>
+    </div>
+  </div>
+  <div class="badge-wrap">
+    <div class="lanyard"><span>MOLINA · MOLINA · MOLINA</span></div>
+    <div class="clip"></div>
+    <button class="badge" id="badge" aria-label="Virar crachá" aria-pressed="false">
+      <div class="face front"><b class="blogo">Molina</b><h4>Lucas Molina</h4><p>Tecnologia · E-commerce · Vendas</p><small>São Paulo, Brasil</small></div>
+      <div class="face back">
+        <h5>MEU CURRÍCULO</h5>
+        <!-- QR real só depois de o PDF ter endereço permanente. Troque este bloco por <img src="assets/qr-curriculo.png"> -->
+        <div class="qr">QR em breve</div>
+        <h6>ESCANEIE PARA ACESSAR</h6>
+        <a class="dl" id="cv" href="assets/curriculo.pdf" download>⤓ Baixar CV</a>
+      </div>
+    </button>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div><span class="seal" title="R">R</span> <b>Molina Portfolio</b> · Lucas Henrique Molina da Silva · <span id="yr"></span></div>
+  <em>Sempre em evolução. Sempre mantendo a raridade.</em>
+  <a href="#top" class="up" aria-label="Voltar ao topo">↑</a>
+</footer>
+<script src="./script - Copia.js"></script>
+</body>
+</html>
